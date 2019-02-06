@@ -1,0 +1,57 @@
+package translateText;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class MyFreme extends JFrame{
+
+JButton b1,b2;
+JLabel l1;
+JTextField t1,t2;
+ JPanel p;
+int i,k,n;
+String a,b,text1;
+JTextArea textArea;
+String[] fullList3;
+Mylesener mylesener=new Mylesener();
+
+
+
+public MyFreme(String[] fullList2){
+	
+    super("обработка файла статистики вызовов на линии сборки");
+    setLayout(new FlowLayout());//расположение элементов на экране
+    fullList3=fullList2;
+  
+    b1=new JButton("преобразовать");
+    l1=new  JLabel("путь к файлу D:\\test.txt");
+    textArea=new JTextArea(100 ,80);
+    add(l1);
+ 
+    add(b1);//добавить элемент в окно
+    setSize(700,500);//размеры окна
+    JScrollPane jScrollPane=new JScrollPane(textArea);
+    add(jScrollPane);
+    b1.addActionListener(mylesener);//добавление слущателя
+    setLocationRelativeTo(null);//окно по центру экрана
+    setVisible(true);//сделать видимым окно
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//задание для кнопки закрытия окна
+    setLocationRelativeTo(null);//окно по центру экрана
+    
+ }
+public class Mylesener implements ActionListener{
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==b1){
+        	
+          
+             for(String m:fullList3) {
+            	 textArea.append(m); 
+             }
+          
+         }
+    }
+ }
+}

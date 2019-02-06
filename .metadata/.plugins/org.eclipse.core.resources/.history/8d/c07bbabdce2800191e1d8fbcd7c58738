@@ -1,0 +1,8 @@
+package translateText;
+
+public class UnloadingFiles {
+	UnloadingFiles(String nextS0,String nextS1,String nextS2,String nextS3,String nextS4){
+		
+	}
+
+}

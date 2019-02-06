@@ -1,0 +1,28 @@
+package translateText;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class MyFreme extends JFrame
+
+{
+    public static void createGUI()
+    {
+        JFrame frame = new JFrame("Test frame");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JLabel label = new JLabel("Test label");
+        frame.getContentPane().add(label);
+        
+        frame.setPreferredSize(new Dimension(200, 100));
+        
+       
+        frame.setVisible(true);          
+   }
+}

@@ -1,0 +1,18 @@
+package translateText;
+
+import java.awt.LayoutManager;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class main {
+	
+	public static void main(String[] args) {
+		new StartMy();
+		 countLabel = new JLabel("Crows:" + voron);
+		    addCrow = new JButton("Add Crow");
+		    removeCrow = new JButton("Remove Crow");
+	}
+}
+	

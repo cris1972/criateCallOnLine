@@ -1,0 +1,153 @@
+package translateText;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class   ReadText {
+	String s,nextS0,nextS1,nextS2,nextS3,nextS4 = "";
+	 public String getS () {
+	       return s;
+	    }
+	
+	public ReadText(String string) {
+	Scanner in;
+		try {
+			in = new Scanner(new File(string));
+			while(in.hasNext())
+				s += in.nextLine() + "\r\n";
+				in.close();
+		} catch (FileNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+	}
+	public void loadTextDuable(String[][] fullList)
+	{
+		for(int n=0;n<20;n++ )
+		{
+			for(int j=0;j<5;j++ )
+			{
+				System.out.print(fullList[j][n]+" ");
+			}
+			System.out.println();
+			
+			
+		}
+		
+	}
+	public void loadfulldate(String[][] fullList, int  howMuch)
+	{
+	int w=0;
+		for(int n=0;n<howMuch;n++ )
+		{
+			
+				nextS0=fullList[0][n].split(":")[1];
+				nextS1=fullList[1][n].split(":")[1];
+				nextS2=fullList[2][n].split(":")[1];
+				nextS3=fullList[3][n].split(":")[1];
+				nextS4=fullList[4][n].split(":")[1];
+				
+				buildString(nextS0,nextS1,nextS2,nextS3,nextS4);//построить строку			
+			
+			}
+	}
+		public void buildString(String nextS0,String nextS1,String nextS2,String nextS3,String nextS4)
+		{
+			
+			System.out.print(nextS3.charAt(0));
+			
+			
+			System.out.print(nextS3.charAt(1));
+			System.out.print(".");
+			//год
+			System.out.print(nextS3.charAt(2));
+			System.out.print(nextS3.charAt(3));
+			System.out.print(".");
+			
+			System.out.print(nextS2.charAt(0));
+			System.out.print(nextS2.charAt(1));
+			System.out.print(" дата ");
+			System.out.print(nextS0.charAt(0));
+			System.out.print(" номер линии ");
+		try {
+			System.out.print(whatAction(nextS0.charAt(1)));
+		} catch (Exception e) {}
+			
+			
+			
+		    	System.out.print("  в ");
+			
+				 
+				System.out.print(nextS2.charAt(2));
+				System.out.print(nextS2.charAt(3)+":");//часы
+				System.out.print(nextS1.charAt(0));
+				System.out.print(nextS1.charAt(1)+":");//минуты
+				System.out.print(nextS1.charAt(2));
+			try {	System.out.print(nextS1.charAt(3)+" ");//время
+			} catch (Exception e) {System.out.print(" "); }
+			
+				System.out.print(deyWeeak(nextS4.charAt(0)) );
+				System.out.println();
+			
+			
+		}
+		private String whatAction(char a) {//какое действие
+			String action = null;
+			switch(a) 
+			{
+		    case '1': 
+		    	action="вызвали ";
+				break;
+			case '2': 
+				action="сбросили";
+			}
+		
+			return action;
+			
+		}
+
+		String deyWeeak(char a)
+		{
+			
+			String day;
+			switch(a) {
+		    case '1': 
+		    	day="понедельник";
+				break;
+			case '2': 
+				day="вторник";
+				break;
+			case '3': 
+				day="среда";
+				break;
+			case '4': 
+				day="четверг";
+				break;
+			case '5': 
+				day="пятница";
+				break;
+			case '6': 
+				day="суббота";
+				break;
+			case '7': 
+				day="воскресенье";
+				break;
+			default: 
+				day="ошибка";
+			    break;
+			}
+			    return day;
+		}
+			
+		}
+	
+		
+	
+	
+	
+
+
+

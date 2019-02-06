@@ -1,0 +1,96 @@
+package translateText;
+
+public class UnloadingFiles {
+	String MyString="";
+	
+	UnloadingFiles(String nextS0,String nextS1,String nextS2,String nextS3,String nextS4){
+		MyString+=nextS3.charAt(0);
+		
+		
+		MyString+=nextS3.charAt(1);
+		MyString+=".";
+		//год
+		MyString+=nextS3.charAt(2);
+		MyString+=nextS3.charAt(3);
+		MyString+=".";
+		
+		MyString+=nextS2.charAt(0);
+		MyString+=nextS2.charAt(1);
+		MyString+=" дата ";
+		MyString+=nextS0.charAt(0);
+		MyString+=" номер линии ";
+	try {
+		MyString+=whatAction(nextS0.charAt(1));
+	} catch (Exception e) {}
+		
+		
+		
+	        MyString+="  в ";
+	        MyString+=nextS2.charAt(2);
+	        MyString+=nextS2.charAt(3)+":";//часы
+	        MyString+=nextS1.charAt(0);
+	        MyString+=nextS1.charAt(1)+":";//минуты
+	        MyString+=nextS1.charAt(2);
+		try {	MyString+=nextS1.charAt(3)+" ";//время
+		} catch (Exception e) {System.out.print(" "); }
+		
+		MyString+=deyWeeak(nextS4.charAt(0)) ;
+			System.out.println();
+		
+		
+	}
+	private String whatAction(char a) {//какое действие
+		String action = null;
+		switch(a) 
+		{
+	    case '1': 
+	    	action="вызвали ";
+			break;
+		case '2': 
+			action="сбросили";
+		}
+	
+		return action;
+		
+	}
+
+	String deyWeeak(char a)
+	{
+		
+		String day;
+		switch(a) {
+	    case '1': 
+	    	day="понедельник";
+			break;
+		case '2': 
+			day="вторник";
+			break;
+		case '3': 
+			day="среда";
+			break;
+		case '4': 
+			day="четверг";
+			break;
+		case '5': 
+			day="пятница";
+			break;
+		case '6': 
+			day="суббота";
+			break;
+		case '7': 
+			day="воскресенье";
+			break;
+		default: 
+			day="ошибка";
+		    break;
+		}
+		    return day;
+	}
+	public String getString(){
+		return  MyString;
+		
+	}
+	
+	}
+
+

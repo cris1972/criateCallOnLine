@@ -1,0 +1,25 @@
+package translateText;
+
+import java.awt.LayoutManager;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class main {
+	
+	public static void main(String[] args) {
+		new StartMy();
+		  JFrame frame = new JFrame("FrameDemo"); // создаём главное окно приложения
+	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // чтобы процесс завершался после закрытия окна
+	        JButton button1 = new JButton("Button 1"); // создаём кнопку
+	        frame.add(button1); // добавляем кнопку на окно
+	        frame.pack(); // автоматически настраиваем размер окна под содержимое
+	        frame.setVisible(true); 
+	      JPanel mainPanel = new JPanel();
+	      
+	      
+	        frame.add(mainPanel);
+	}
+}
+	
